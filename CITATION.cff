@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software or data, please cite it as below."
+title: "6N-wing-finestructure: Fine Structure of the Wing-Transition Memory (Part XXXV)"
+authors:
+  - family-names: Chen
+    given-names: Ruqing
+    affiliation: "GUT Geoservice Inc., Montreal, Quebec, Canada"
+    email: ruqing@hotmail.com
+date-released: 2026-06-08
+license: MIT
+repository-code: "https://github.com/Ruqing1963/6N-wing-finestructure"
+abstract: >
+  Code and measured data refining Part XXXIV's wing-transition memory on the 6N skeleton, over all
+  50,847,531 steps up to 10^9. Two results: (i) the lag-2 switch autocorrelation is +0.00417, 4.3x the
+  AR(1) prediction rho1^2=+0.00098, with PACF(2)=+0.00319 at 23 sigma and higher lags vanishing, so the
+  switch process has memory length exactly two; (ii) the first-order deficit fades as a leading 1/logN
+  (delta1*logN ~ 1.05), with the second-order signal locked to it at ratio ~1.7. Within the
+  Hardy-Littlewood / Oliver-Soundararajan framework; no theorem or mechanism is claimed.
