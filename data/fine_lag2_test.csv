@@ -1,0 +1,10 @@
+quantity,value
+P_switch,0.55488
+rho1,-0.031272
+rho2_measured,0.004169
+rho2_AR1_pred_r1sq,0.000978
+rho2_excess,0.003191
+rho2_ratio_to_AR1,4.26
+PACF2,0.003194
+PACF2_sigma,23
+rho3,0.000094

@@ -1,0 +1,6 @@
+signal,power_alpha,C,note
+delta1_first_order,0.850,0.687,delta1 ~ C/(logN)^alpha
+absrho1_second_order,1.061,0.741,|rho1| ~ C/(logN)^alpha
+exponent_ratio_2nd_over_1st,1.248,-,1.0 => same law
+delta1_times_logN_mean,1.051,-,~const => leading 1/logN
+ratio_delta1_over_rho1_mean,1.684,-,~const => locked
