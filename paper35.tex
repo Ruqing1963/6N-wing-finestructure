@@ -1,0 +1,180 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{booktabs}
+\usepackage[expansion=false]{microtype}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+
+\title{\bf Fine Structure of the Wing-Transition Memory\\
+on the $6N$ Skeleton: the Lag-Two Echo and\\
+the $1/\log$ Decay%
+\thanks{Code and measured data: \url{https://github.com/Ruqing1963/6N-wing-finestructure}}}
+\author{Ruqing Chen\\
+\small GUT Geoservice Inc., Montreal, Quebec, Canada\\
+\small \texttt{ruqing@hotmail.com}}
+\date{June 8, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Part~XXXIV established that the prime wing string---right ($6N{+}1$) versus left ($6N{-}1$)---is not a
+first-order Markov chain but carries an effective second-order memory, the switch sequence having a
+lag-one autocorrelation of $-0.033$. Two fine questions were left open, and we settle them here with the
+full prime census to $10^{9}$ ($50{,}847{,}531$ steps). First: is the small lag-two echo a mere shadow
+of the lag-one term, or independent? For a first-order (AR(1)) switch process the lag-two
+autocorrelation would be exactly $\rho_1^2=+0.00098$; we measure $\rho_2=+0.00417$, \emph{$4.3$ times}
+larger, a partial autocorrelation $\mathrm{PACF}(2)=+0.0032$ at $23\sigma$, with $\rho_{\ge3}$
+vanishing. The memory therefore reaches genuinely to lag two---a positive echo riding on the negative
+nearest-neighbour term---and stops. Second: how fast does the bias fade? Across thirteen logarithmic
+windows the first-order deficit $\delta_1=\tfrac12-P(\text{same})$ obeys a leading $1/\log N$ law
+($\delta_1\log N\approx1.05$, nearly flat; a single power fit gives an effective exponent $0.85$, the
+shortfall a slowly-varying correction the range cannot resolve), and the second-order signal $|\rho_1|$
+fades in lock-step, the ratio $\delta_1/|\rho_1|\approx1.7$ holding across five decades. Both are
+incremental refinements of Part~XXXIV inside the Hardy--Littlewood and Oliver--Soundararajan framework;
+what we add are the specific measured numbers---the lag-two excess and the decay law. This is a
+measurement, not a theorem.
+\end{abstract}
+
+\section{Introduction}
+Part~XXXIV \cite{PXXXIV} read the primes as a binary string of wing symbols and found the string is not
+a fair coin (Cram\'er) nor a first-order Markov chain: the switch sequence
+$\sigma_i=\mathbf{1}[w_{i+1}\ne w_i]$ has autocorrelation $\rho_1\approx-0.033$, an anti-persistence we
+called a topological strain memory, with a weak $+0.005$ at lag two and nothing measurable beyond. Two
+questions were flagged but not answered, and both are sharp, finite, and were unknown to us in advance.
+
+\emph{(i) Is the lag-two echo real, or derived?} A symmetric first-order chain has an independent switch
+sequence, but a chain that is itself merely AR(1) in the switches would still show
+$\rho_k=\rho_1^{\,k}$; the lag-two value would then be the trivial $\rho_1^2\approx+0.001$. Is the
+measured echo larger than that?
+
+\emph{(ii) What is the decay law?} Oliver and Soundararajan \cite{OS} predict the bias vanishes as
+$N\to\infty$; Part~XXXIV showed $P(\text{same})$ drifting from $0.404$ toward $0.5$, but fit no rate.
+Does $\delta_1$ fall like $1/\log N$, like $1/\log^2 N$, like $\log\log N/\log N$? And does the
+second-order signal fade by the same law or its own?
+
+These are refinements, not a new direction: the existence of the structure is contained in the
+Hardy--Littlewood $r$-tuple heuristic \cite{HL} and the Oliver--Soundararajan bias \cite{OS}, and we
+prove nothing. What we contribute are the measured numbers that pin the fine structure down. We use all
+$50{,}847{,}532$ primes $3<p\le10^{9}$.
+
+\section{Setup}
+Let $w_i\in\{\mathrm{R},\mathrm{L}\}$ be the wing of the $i$-th prime $>3$ and
+$\sigma_i=\mathbf{1}[w_{i+1}\ne w_i]$ the switch sequence, with overall switch rate $P(\sigma)=0.5549$
+to $10^{9}$. Two null models frame the questions. For the lag-two test, the null is an AR(1) switch
+process, under which the autocorrelation decays geometrically, $\rho_k=\rho_1^{\,k}$; the partial
+autocorrelation $\mathrm{PACF}(2)=(\rho_2-\rho_1^2)/(1-\rho_1^2)$ isolates any lag-two structure not
+already implied by lag one, and is zero under the null. For the decay law we bin the steps into
+quarter-decade windows of $p$ and fit $\delta_1\sim C/(\log N)^{\alpha}$.
+
+\section{The lag-two echo is real}
+The switch autocorrelations to $10^{9}$ are
+\[
+\rho_1=-0.03127\ (223\sigma),\quad \rho_2=+0.00417\ (30\sigma),\quad \rho_3=+0.00009\ (1\sigma),
+\]
+with $\rho_{\ge3}$ indistinguishable from zero (Fig.~\ref{fig:fig1}(A)). The AR(1) null predicts
+$\rho_2=\rho_1^2=+0.00098$; the measured value is $4.3$ times larger. The excess is the partial
+autocorrelation
+\[
+\mathrm{PACF}(2)=\frac{\rho_2-\rho_1^2}{1-\rho_1^2}=+0.00319\quad(23\sigma),
+\]
+significantly nonzero (Fig.~\ref{fig:fig1}(B)). The memory in the switch sequence therefore reaches
+genuinely to the second lag---and, with $\rho_{\ge3}$ vanishing, no further. Its sign is the surprise:
+the nearest-neighbour term is negative (a switch suppresses the next switch), but the lag-two term is
+\emph{positive}, a faint tendency for the state two steps on to rhyme with the present---picturesquely,
+the faint overcorrection echo following the strong nearest-neighbour rebound. We offer the image only
+as a mnemonic for the measured signs; it is a description of two autocorrelation coefficients, not a
+mechanism. This is the
+step-sequence face of the third-order residual seen directly in the wing conditionals of Part~XXXIV;
+here it is resolved as a signed, lag-two-localised echo. ``Effective second-order'' is thus sharpened:
+the switch process is one of memory length two, dominated by the lag-one anti-persistence with a
+lag-two positive echo a tenth its size.
+
+\section{The decay law}
+Binning into thirteen quarter-decade windows from $p\sim10^{5}$ to $10^{9}$
+(Table~\ref{tab:decay}), the first-order deficit $\delta_1=\tfrac12-P(\text{same})$ falls from
+$0.074$ to $0.053$. Three readings agree on a leading $1/\log N$ law. The product $\delta_1\log N$ is
+nearly flat at $1.05$ (rising only from $1.00$ to $1.08$ across the range), so $\delta_1\approx1/\log
+N$ to leading order; a single power fit $\delta_1\sim C/(\log N)^{\alpha}$ returns $\alpha=0.85$, the
+shortfall from $1$ reflecting a slowly-varying (plausibly $\log\log$) correction the five-decade range
+cannot resolve (Fig.~\ref{fig:fig2}(A)). The second-order signal $|\rho_1|$ fits $\alpha=1.06$ and,
+crucially, fades in step with the first: the ratio $\delta_1/|\rho_1|$ holds at $1.68$ across the whole
+range (Fig.~\ref{fig:fig2}(B)), drifting only from $1.6$ to $1.8$. The first- and second-order biases
+are thus two amplitudes of a single fading effect, not independent decays---consistent with both being
+shadows of the same Oliver--Soundararajan correction, whose leading order in the wing language is
+$\sim1/\log N$.
+
+\begin{table}[t]
+\centering\small
+\begin{tabular}{rccccc}
+\toprule
+$\log N$ & $P(\text{same})$ & $\delta_1$ & $|\rho_1|$ & $\delta_1\log N$ & $\delta_1/|\rho_1|$\\
+\midrule
+13.5 & 0.4261 & 0.0739 & 0.0436 & 1.000 & 1.70\\
+15.8 & 0.4359 & 0.0641 & 0.0387 & 1.048 & 1.66\\
+17.6 & 0.4403 & 0.0597 & 0.0350 & 1.045 & 1.71\\
+19.3 & 0.4458 & 0.0542 & 0.0310 & 1.075 & 1.75\\
+20.4 & 0.4470 & 0.0530 & 0.0295 & 1.082 & 1.80\\
+\bottomrule
+\end{tabular}
+\caption{Decay of the wing bias (selected windows; full table in the repository). $\delta_1\log N$ is
+nearly flat ($\sim1/\log N$ leading), and $\delta_1/|\rho_1|$ is nearly constant (first and second order
+locked together).}
+\label{tab:decay}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{p35_fig1.pdf}
+\caption{(A) Switch-sequence autocorrelation (blue) against the AR(1) prediction $\rho_1^{\,k}$ (red).
+The lag-one terms coincide by construction; the lag-two measured value exceeds the AR(1) value, and
+$\rho_{\ge3}$ vanish. (B) The lag-two value decomposed: the AR(1)-derived part $\rho_1^2$, the measured
+$\rho_2$, and their difference, the partial autocorrelation $\mathrm{PACF}(2)=+0.0032$ ($23\sigma$).}
+\label{fig:fig1}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{p35_fig2.pdf}
+\caption{(A) The first-order deficit $\delta_1$ and the second-order $|\rho_1|$ versus $\log N$
+(log--log), with a power-law guide of exponent $0.85$. (B) The two diagnostics that read the law:
+$\delta_1\log N\approx1.05$ (nearly flat: leading $1/\log N$) and $\delta_1/|\rho_1|\approx1.7$ (nearly
+flat: first and second order locked).}
+\label{fig:fig2}
+\end{figure}
+
+\FloatBarrier
+\section{Scope and honest ledger}
+Two fine questions left open in Part~XXXIV now have measured answers. The lag-two echo of the switch
+sequence is real, not an AR(1) shadow: at $4.3$ times the geometric prediction and $23\sigma$ in the
+partial autocorrelation, with all higher lags vanishing, the switch process has memory length exactly
+two---a negative nearest-neighbour term and a positive lag-two echo a tenth its size. And the bias
+fades as a leading $1/\log N$ ($\delta_1\log N\approx1.05$), the second-order signal locked to the first
+at a constant ratio $\approx1.7$, so the two are one fading effect seen at two orders. The ratio is not
+exactly fixed---it drifts from $1.6$ to $1.8$ across the range---but its near-constancy over five
+decades says the first- and second-order biases are controlled by a single fading amplitude rather than
+decaying independently.
+
+We are explicit that this is a refinement, not a discovery. The structure itself is contained in the
+Hardy--Littlewood $r$-tuple heuristic \cite{HL}, and the vanishing of the bias with scale is the
+Oliver--Soundararajan prediction \cite{OS}; we prove no theorem and propose no mechanism. What this note
+adds is the quantitative fine structure---the size and sign of the lag-two partial autocorrelation, the
+exact-two memory length, the leading $1/\log N$ decay exponent, and the locked first-to-second-order
+ratio---measured against the full prime census to $10^{9}$. Everything here equals a direct count over
+the primes and takes the Hardy--Littlewood heuristic as input.
+
+\paragraph{Data and code availability.} The sieve to $10^{9}$, the switch-sequence autocorrelations and
+AR(1)/partial-autocorrelation test, the full windowed decay table and fits, and the figure scripts are
+openly available at \url{https://github.com/Ruqing1963/6N-wing-finestructure}.
+
+\begin{thebibliography}{9}
+\bibitem{HL} G.~H.~Hardy, J.~E.~Littlewood, \emph{Some problems of `Partitio Numerorum'; III}, Acta Math.\ \textbf{44} (1923), 1--70.
+\bibitem{OS} R.~J.~Lemke Oliver, K.~Soundararajan, \emph{Unexpected biases in the distribution of consecutive primes}, Proc.\ Natl.\ Acad.\ Sci.\ USA \textbf{113} (2016), E4446--E4454.
+\bibitem{PXXXIV} R.~Chen, \emph{Topological strain memory on the 6N skeleton: the effective second-order Markov dynamics of prime wing transitions} (Part XXXIV), Zenodo, doi:10.5281/zenodo.20603211 (2026).
+\bibitem{review} R.~Chen, \emph{Arithmetic geodynamics on the 6N skeleton: a review of Parts I--XIX}, Zenodo, doi:10.5281/zenodo.20585301 (2026).
+\end{thebibliography}
+
+\end{document}
